@@ -1,0 +1,91 @@
+:root {
+    --background: #141316;
+    --title: #CE7B1D;
+    --calculator: #1A1A1C;
+    --operators: #dd8c2f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    background-color: var(--background);
+}
+
+.title {
+    margin-bottom: 50px;
+    color: var(--title);
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    max-width: 390px;
+    padding: 15px;
+    background-color: var(--calculator);
+    border: 1px solid var(--title);
+    border-radius: 5px;
+}
+
+.calculator .displayCalculator {
+    height: 80px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    outline: none;
+    border: none;
+    padding-left: 12px;
+}
+
+.calculator .caculatorButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.calculator .caculatorButtons button {
+    width: 82px;
+    height: 80px;
+    border-radius: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.calculator .caculatorButtons button:hover {
+    box-shadow: 0 0 5px var(--title);
+    background-color: var(--background);
+    color: white;
+}
+
+.calculator .caculatorButtons .operator {
+    background-color: var(--operators);
+    color: white;
+}
+
+.calculator .caculatorButtons .clear-button,
+.calculator .caculatorButtons .operator.equal {
+    width: 172px;
+}
+
+@media (max-width: 380px) {
+    .calculator {
+        width: 280px;
+    }
+    .calculator .caculatorButtons button {
+        width: 50px;
+        height: 50px;
+    }
+    .calculator .caculatorButtons .clear-button,
+    .calculator .caculatorButtons .operator.equal {
+    width: 110px;
+}
+}
