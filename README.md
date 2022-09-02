@@ -17,8 +17,12 @@ Projeto de uma calculadora tradicional feita com PHP e um pouco de HTML e CSS.
 ## ⚙️ Como foi Desenvolvido
 A estrutura da calculadora foi construída como um formulário em HTML: o display dela se trata de um input text, enquanto cada botão possui um name e um value referente ao seu conteúdo. Quando um botão é clicado, o value do botão é enviado ao PHP pelo método post, depois o PHP retorna a página com o value do botão clicado dentro do display da calculadora. Abaixo da calculadora existe um input escondido que serve para armazenar os dados enviados anteriormente para que assim eles possam ser visualizados também no display. se o valor do botão for igual ao operador =, o PHP pega os dados anteriores e executa a função eval que nada mais é uma função que pode realizar expressões aritiméticas em formato string passadas para ela.
 
+<br>
+
 ## 📖 O que eu aprendi durante o desenvolvimento
 Aprendi novas funções em PHP, novas formas de usar expressões regulares para filtrar determinadas strings, maneiras de trabalhar com formulários e com arrays e melhorei minha lógica se tratando em trabalhar com envio e retorno de dados em PHP.
+
+<br>
 
 ## 🛠️ Tecnologias
 
