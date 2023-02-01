@@ -22,7 +22,12 @@ if ($currentValue == 'C') {
     $display = substr($display, 0, -3);
     // Se o valor recebido atual for igual a = e se os valores anteriores corresponderem à expressão regular, fazer o cálculo com a função eval.   
 } elseif ($currentValue == '=' && preg_match('~^\-?\d*\.?\d+(?:[*/+-]\d*\.?\d+)*$~', $previousValues)) {
-    $display = eval("return $previousValues;");
+    $lastvalue = substr($previousValues, -1);
+    if ($lastvalue === "0") {
+        $display = "ERRO: divisão por zero";
+    } else {
+        $display = eval("return $previousValues;");
+    }
 }
 ?>
 
@@ -33,7 +38,8 @@ if ($currentValue == 'C') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
+    <title>Calculadora PHP</title>
+    <link rel="icon" href="./favicon/favicon-32x32.png" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
@@ -45,23 +51,24 @@ if ($currentValue == 'C') {
         <input class="displayCalculator" name="displayCalculator" readonly type="text" value="<?php echo $display; ?>">
         <div class="caculatorButtons">
             <button name="button" value="C" class="clear-button">C</button>
-            <button name="button" value="<<"> << </button>
-            <button name="button" value="/" class="operator">/</button>
-            <button name="button" value="7">7</button>
-            <button name="button" value="8">8</button>
-            <button name="button" value="9">9</button>
-            <button name="button" value="*" class="operator">*</button>
-            <button name="button" value="4">4</button>
-            <button name="button" value="5">5</button>
-            <button name="button" value="6">6</button>
-            <button name="button" value="-" class="operator">-</button>
-            <button name="button" value="1">1</button>
-            <button name="button" value="2">2</button>
-            <button name="button" value="3">3</button>
-            <button name="button" value="+" class="operator">+</button>
-            <button name="button" value="0">0</button>
-            <button name="button" value=".">.</button>
-            <button name="button" value="=" class="operator equal">=</button>
+            <button name="button" value="<<">
+                << </button>
+                    <button name="button" value="/" class="operator">/</button>
+                    <button name="button" value="7">7</button>
+                    <button name="button" value="8">8</button>
+                    <button name="button" value="9">9</button>
+                    <button name="button" value="*" class="operator">*</button>
+                    <button name="button" value="4">4</button>
+                    <button name="button" value="5">5</button>
+                    <button name="button" value="6">6</button>
+                    <button name="button" value="-" class="operator">-</button>
+                    <button name="button" value="1">1</button>
+                    <button name="button" value="2">2</button>
+                    <button name="button" value="3">3</button>
+                    <button name="button" value="+" class="operator">+</button>
+                    <button name="button" value="0">0</button>
+                    <button name="button" value=".">.</button>
+                    <button name="button" value="=" class="operator equal">=</button>
         </div>
         </main>
 
